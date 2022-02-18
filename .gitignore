@@ -1,6 +1,6 @@
 ### VisualStudioCode template
 .vscode/
-
+bin/
 # Local History for Visual Studio Code
 .history/
 sandbox/

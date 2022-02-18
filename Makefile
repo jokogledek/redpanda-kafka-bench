@@ -12,12 +12,12 @@ vet:
 build:
 	@echo "---- BUILD -----"
 	@go mod tidy
-	@go build -o ./cmd/add_topic/app ./cmd/add_topic/
-	@go build -o ./cmd/consumer/app ./cmd/consumer/
-	@go build -o ./cmd/data_loader/app ./cmd/data_loader/
+	@go build -o ./bin/add_topic ./cmd/add_topic/
+	@go build -o ./bin/consumer ./cmd/consumer/
+	@go build -o ./bin/data_loader ./cmd/data_loader/
 
 topic: vet build
-	@./cmd/add_topic/app
+	@./bin/add_topic
 
 consumer: vet build
-	@./cmd/consumer/app
+	@./bin/consumer
