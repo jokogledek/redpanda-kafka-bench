@@ -1,0 +1,13 @@
+{
+  "partition_count": 10,
+  "consumer_count": 10,
+  "topic_name": "product_inventory",
+  "input_path": "files/data_source",
+  "output_path": "files/data_out",
+  "input_file": "SampleCSVFile_2kb.csv",
+  "host": [
+    "127.0.0.1:61424",
+    "127.0.0.1:61430",
+    "127.0.0.1:61429"
+  ]
+}
