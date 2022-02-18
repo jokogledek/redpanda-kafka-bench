@@ -2,7 +2,6 @@ package delivery
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/twmb/franz-go/pkg/kgo"
@@ -56,12 +55,7 @@ func (k *KfaConsumer) startConsumer(idx int) {
 		// or a callback function.
 		fetches.EachPartition(func(p kgo.FetchTopicPartition) {
 			for _, record := range p.Records {
-				var data []*model.ProductData
-				err := json.Unmarshal(record.Value, &data)
-				if err != nil {
-					continue
-				}
-				log.Infof("[consumer_%d] new data from consumer %d", idx, idx)
+				k.DataParserCase.ParseMessage(record, idx)
 			}
 		})
 	}
