@@ -5,6 +5,7 @@ import (
 	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/delivery"
 	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/model"
 	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/repository"
+	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/usecase"
 	"os"
 	"sync"
 )
@@ -27,8 +28,10 @@ func main() {
 		log.Fatalf("err init broker, %#v", err)
 	}
 
+	parser := usecase.New(cfg)
+
 	consumer := delivery.New(cfg, kfka)
-	err = consumer.InitConsumer()
+	err = consumer.InitConsumer(parser)
 	if err != nil {
 		log.Fatalf("err InitConsumer, %#v", err)
 	}
