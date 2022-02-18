@@ -2,8 +2,8 @@ package main
 
 import (
 	log "github.com/sirupsen/logrus"
-	"github.com/ujunglangit-id/kafka-bridge/internal/model"
-	"github.com/ujunglangit-id/kafka-bridge/internal/repository"
+	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/model"
+	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/repository"
 	"os"
 )
 

@@ -3,7 +3,7 @@ package repository
 import (
 	log "github.com/sirupsen/logrus"
 	"github.com/twmb/franz-go/pkg/kgo"
-	"github.com/ujunglangit-id/kafka-bridge/internal/model"
+	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/model"
 	"os"
 )
 
