@@ -1,7 +1,7 @@
 {
   "partition_count": 10,
   "consumer_count": 10,
-  "topic_name": "product_inventory",
+  "topic_name": "product_inventory_tes1",
   "input_path": "files/data_source",
   "output_path": "files/data_out",
   "input_file": "SampleCSVFile_2kb.csv",
