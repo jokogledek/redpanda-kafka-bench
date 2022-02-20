@@ -2,12 +2,15 @@ package repository
 
 import (
 	"context"
+	"encoding/json"
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/twmb/franz-go/pkg/kerr"
 	"github.com/twmb/franz-go/pkg/kgo"
 	"github.com/twmb/franz-go/pkg/kmsg"
 	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/model"
 	"os"
+	"sync"
 	"time"
 )
 
@@ -35,6 +38,10 @@ func (k *KafkaRepo) InitBrokers() (err error) {
 		log.Errorf("[redpanda] error init new client, %#v", err)
 	}
 	return
+}
+
+func (k *KafkaRepo) Close() {
+	k.KafkaClient.Close()
 }
 
 func (k *KafkaRepo) InitTopic() (err error) {
@@ -99,6 +106,25 @@ func (k *KafkaRepo) InitTopic() (err error) {
 	return
 }
 
-func (k *KafkaRepo) PublishMsg() {
-
+func (k *KafkaRepo) PublishMsg(data model.ProductData) {
+	defer k.Close()
+	payload, err := json.Marshal(&data)
+	if err != nil {
+		log.Errorf("Error marshall file : %#v\n", err)
+		return
+	}
+	record := &kgo.Record{
+		Key:   []byte(data.UserID),
+		Value: payload,
+		Topic: k.Cfg.TopicName,
+	}
+	wg := sync.WaitGroup{}
+	wg.Add(1)
+	k.KafkaClient.Produce(context.Background(), record, func(_ *kgo.Record, err error) {
+		defer wg.Done()
+		if err != nil {
+			fmt.Printf("record had a produce error: %v\n", err)
+		}
+	})
+	wg.Wait()
 }

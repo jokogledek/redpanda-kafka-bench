@@ -1,12 +1,12 @@
 package model
 
 type ProductData struct {
-	ID          int
-	ProductName string
-	Description string
-	Category    string
-	UserName    string
-	UserID      int
+	ID          string `json:"id"`
+	ProductName string `json:"product_name"`
+	Description string `json:"description"`
+	Category    string `json:"category"`
+	UserName    string `json:"user_name"`
+	UserID      string `json:"user_id"`
 }
 
 type Config struct {

@@ -2,36 +2,40 @@ package usecase
 
 import (
 	"encoding/csv"
-	"encoding/json"
-	log "github.com/sirupsen/logrus"
+	"fmt"
 	"github.com/twmb/franz-go/pkg/kgo"
 	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/model"
+	"github.com/ujunglangit-id/redpanda-kafka-bench/internal/repository"
 	"os"
 )
 
 type DataParser struct {
-	cfg *model.Config
+	cfg  *model.Config
+	repo *repository.KafkaRepo
 }
 
-func New(cfg *model.Config) *DataParser {
+func New(cfg *model.Config, repo *repository.KafkaRepo) *DataParser {
 	return &DataParser{
-		cfg: cfg,
+		cfg:  cfg,
+		repo: repo,
 	}
 }
 
 func (d *DataParser) ParseMessage(record *kgo.Record, idx int) {
-	var msg model.ProductData
-	err := json.Unmarshal(record.Value, &msg)
-	if err != nil {
-		log.Errorf("[parsemsg] error unmarshal incoming msg , err %#v", err)
-		return
-	}
+	//var msg model.ProductData
+	//err := json.Unmarshal(record.Value, &msg)
+	//if err != nil {
+	//	log.Errorf("[parsemsg] error unmarshal incoming msg , err %#v", err)
+	//	return
+	//}
 
-	csvFile, err := os.Create("employee.csv")
-	if err != nil {
-		log.Fatalf("failed creating file: %s", err)
-	}
-	csvFile.Close()
+	fmt.Printf("%s\n", string(record.Value))
+
+	//csvFile, err := os.Create("employee.csv")
+	//if err != nil {
+	//	log.Fatalf("failed creating file: %s", err)
+	//}
+	//csvFile.Close()
 
 }
 

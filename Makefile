@@ -16,8 +16,17 @@ build:
 	@go build -o ./bin/consumer ./cmd/consumer/
 	@go build -o ./bin/data_loader ./cmd/data_loader/
 
+build_all: vet build
+
 topic: vet build
 	@./bin/add_topic
 
 consumer: vet build
 	@./bin/consumer
+
+run_multi_consumer:
+	 @./bin/consumer >> out_consumer/data_consumer_1.txt
+	 @./bin/consumer >> out_consumer/data_consumer_2.txt &
+	 @./bin/consumer >> out_consumer/data_consumer_3.txt &
+	 @./bin/consumer >> out_consumer/data_consumer_4.txt &
+	 @./bin/consumer >> out_consumer/data_consumer_5.txt &

@@ -28,8 +28,7 @@ func main() {
 		log.Fatalf("err init broker, %#v", err)
 	}
 
-	parser := usecase.New(cfg)
-
+	parser := usecase.New(cfg, kfka)
 	consumer := delivery.New(cfg, kfka)
 	err = consumer.InitConsumer(parser)
 	if err != nil {
