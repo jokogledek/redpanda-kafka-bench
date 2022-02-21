@@ -1,0 +1,362 @@
+08:47:27.778 [main] INFO - Starting benchmark with config: {
+  "drivers" : [ "driver-kafka/kafka-throughput.yaml" ],
+  "workers" : null,
+  "workersFile" : null,
+  "workloads" : [ "workloads/max-rate-1-topic-1-partition-1p-1c-1kb.yaml" ],
+  "output" : null
+}
+08:47:27.808 [main] INFO - Workloads: {
+  "max-rate-1-topic-1-partition-1p-1c-1kb" : {
+    "name" : "max-rate-1-topic-1-partition-1p-1c-1kb",
+    "topics" : 1,
+    "partitionsPerTopic" : 1,
+    "keyDistributor" : "NO_KEY",
+    "messageSize" : 1024,
+    "useRandomizedPayloads" : true,
+    "randomBytesRatio" : 0.5,
+    "randomizedPayloadPoolSize" : 1000,
+    "payloadFile" : null,
+    "subscriptionsPerTopic" : 1,
+    "producersPerTopic" : 1,
+    "consumerPerSubscription" : 1,
+    "producerRate" : 10000000,
+    "consumerBacklogSizeGB" : 0,
+    "testDurationMinutes" : 5
+  }
+}
+08:47:27.849 [main] INFO - --------------- WORKLOAD : max-rate-1-topic-1-partition-1p-1c-1kb --- DRIVER : Kafka---------------
+08:47:28.006 [main] INFO - Driver: {
+  "name" : "Kafka",
+  "driverClass" : "io.openmessaging.benchmark.driver.kafka.KafkaBenchmarkDriver"
+}
+08:47:28.027 [main] INFO - AdminClientConfig values: 
+	bootstrap.servers = [127.0.0.1:33785, 127.0.0.1:39913, 127.0.0.1:45821]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+08:47:28.077 [main] INFO - Kafka version: 3.0.0
+08:47:28.078 [main] INFO - Kafka commitId: 8cb0a5e9d3441962
+08:47:28.078 [main] INFO - Kafka startTimeMs: 1645408048076
+08:47:28.406 [main] INFO - Created 1 topics in 130.357402 ms
+08:47:28.406 [main] INFO - Created 1 topics in 130.757421 ms
+08:47:28.412 [main] INFO - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [127.0.0.1:33785, 127.0.0.1:39913, 127.0.0.1:45821]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-sub-000-LM8jNnI-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sub-000-LM8jNnI
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 20485760
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+08:47:28.435 [main] INFO - Kafka version: 3.0.0
+08:47:28.435 [main] INFO - Kafka commitId: 8cb0a5e9d3441962
+08:47:28.435 [main] INFO - Kafka startTimeMs: 1645408048435
+08:47:28.436 [main] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Subscribed to topic(s): test-topic-XFdg-Nw-0000
+08:47:28.438 [main] INFO - Created 1 consumers in 31.434149 ms
+08:47:28.438 [main] INFO - Created 1 consumers in 31.567568 ms
+08:47:28.442 [main] INFO - ProducerConfig values: 
+	acks = -1
+	batch.size = 2048576
+	bootstrap.servers = [127.0.0.1:33785, 127.0.0.1:39913, 127.0.0.1:45821]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+08:47:28.447 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Discovered group coordinator 127.0.0.1:33785 (id: 2147483647 rack: null)
+08:47:28.448 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] (Re-)joining group
+08:47:28.454 [main] INFO - Kafka version: 3.0.0
+08:47:28.454 [main] INFO - Kafka commitId: 8cb0a5e9d3441962
+08:47:28.454 [main] INFO - Kafka startTimeMs: 1645408048454
+08:47:28.455 [main] INFO - Created 1 producers in 16.564719 ms
+08:47:28.455 [main] INFO - Created 1 producers in 16.71043 ms
+08:47:28.455 [main] INFO - Waiting for consumers to be ready
+08:47:28.457 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Request joining group due to: need to re-join with the given member-id
+08:47:28.457 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] (Re-)joining group
+08:47:28.458 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Successfully joined group with generation Generation{generationId=1, memberId='consumer-sub-000-LM8jNnI-1-153b045f-e8ce-4b08-9e61-5efdcab1a746', protocol='range'}
+08:47:28.460 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Finished assignment for group at generation 1: {consumer-sub-000-LM8jNnI-1-153b045f-e8ce-4b08-9e61-5efdcab1a746=Assignment(partitions=[test-topic-XFdg-Nw-0000-0])}
+08:47:28.463 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Successfully synced group in generation Generation{generationId=1, memberId='consumer-sub-000-LM8jNnI-1-153b045f-e8ce-4b08-9e61-5efdcab1a746', protocol='range'}
+08:47:28.464 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Notifying assignor about the new Assignment(partitions=[test-topic-XFdg-Nw-0000-0])
+08:47:28.465 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Adding newly assigned partitions: test-topic-XFdg-Nw-0000-0
+08:47:28.470 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Found no committed offset for partition test-topic-XFdg-Nw-0000-0
+08:47:28.485 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 8 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483646 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.485 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:28.583 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 10 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483645 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.584 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:28.684 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 12 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483644 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.685 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:28.785 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 14 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483643 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.786 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:28.886 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 16 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483642 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.886 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:28.987 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 18 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483641 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:28.987 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.088 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 20 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483640 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.088 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.189 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 22 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483639 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.189 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.290 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 24 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483638 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.290 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.391 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 26 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483637 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.391 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.492 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 28 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483636 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.493 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.593 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 30 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483635 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.593 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.694 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 32 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483634 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.695 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.795 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 34 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483633 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.795 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.896 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 36 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483632 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.896 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:29.996 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Got error produce response with correlation id 38 on topic-partition test-topic-XFdg-Nw-0000-0, retrying (2147483631 attempts left). Error: NOT_LEADER_OR_FOLLOWER
+08:47:29.996 [kafka-producer-network-thread | producer-1] WARN - [Producer clientId=producer-1] Received invalid metadata error in produce request on partition test-topic-XFdg-Nw-0000-0 due to org.apache.kafka.common.errors.NotLeaderOrFollowerException: For requests intended only for the leader, this error indicates that the broker is not the current leader. For requests intended for any replica, this error indicates that the broker is not a replica of the topic partition.. Going to request metadata update now
+08:47:30.148 [pool-2-thread-1] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Resetting offset for partition test-topic-XFdg-Nw-0000-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:39913 (id: 2 rack: null)], epoch=absent}}.
+08:47:30.174 [main] INFO - All consumers are ready
+08:47:30.181 [main] INFO - ----- Starting warm-up traffic ------
+08:47:40.260 [main] INFO - Pub rate 85811.8 msg/s / 83.8 MB/s | Cons rate 85811.9 msg/s / 83.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 356.6 - 50%: 349.6 - 99%: 473.5 - 99.9%: 490.2 - Max: 519.7
+08:47:50.296 [main] INFO - Pub rate 90823.8 msg/s / 88.7 MB/s | Cons rate 90823.8 msg/s / 88.7 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 347.8 - 50%: 342.8 - 99%: 396.7 - 99.9%: 412.5 - Max: 420.3
+08:48:00.320 [main] INFO - Pub rate 80647.9 msg/s / 78.8 MB/s | Cons rate 80647.9 msg/s / 78.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 378.7 - 50%: 348.4 - 99%: 1201.4 - 99.9%: 1417.1 - Max: 1448.4
+08:48:10.348 [main] INFO - Pub rate 54914.6 msg/s / 53.6 MB/s | Cons rate 54914.6 msg/s / 53.6 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 595.0 - 50%: 362.4 - 99%: 1497.1 - 99.9%: 1569.7 - Max: 1591.6
+08:48:20.379 [main] INFO - Pub rate 87462.5 msg/s / 85.4 MB/s | Cons rate 87659.9 msg/s / 85.6 MB/s | Backlog: -2.0 K | Pub Latency (ms) avg: 361.0 - 50%: 360.1 - 99%: 406.2 - 99.9%: 410.9 - Max: 433.6
+08:48:30.405 [main] INFO - Pub rate 42682.4 msg/s / 41.7 MB/s | Cons rate 42484.7 msg/s / 41.5 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 735.2 - 50%: 352.0 - 99%: 1508.4 - 99.9%: 1535.2 - Max: 1675.0
+08:48:30.439 [main] INFO - ----- Aggregated Pub Latency (ms) avg: 426.1 - 50%: 352.2 - 95%: 1235.5 - 99%: 1404.6 - 99.9%: 1535.2 - 99.99%: 1569.8 - Max: 1675.0
+08:48:30.517 [main] INFO - ----- Starting benchmark traffic ------
+08:48:40.531 [main] INFO - Pub rate 93608.9 msg/s / 91.4 MB/s | Cons rate 93708.8 msg/s / 91.5 MB/s | Backlog: -1.0 K | Pub Latency (ms) avg: 341.4 - 50%: 338.0 - 99%: 388.2 - 99.9%: 406.0 - Max: 426.7
+08:48:50.553 [main] INFO - Pub rate 66028.5 msg/s / 64.5 MB/s | Cons rate 65928.7 msg/s / 64.4 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 455.5 - 50%: 338.2 - 99%: 1486.6 - 99.9%: 1539.2 - Max: 1631.1
+08:49:00.584 [main] INFO - Pub rate 68726.1 msg/s / 67.1 MB/s | Cons rate 68875.7 msg/s / 67.3 MB/s | Backlog: -1.5 K | Pub Latency (ms) avg: 481.4 - 50%: 351.7 - 99%: 1494.3 - 99.9%: 1528.5 - Max: 1592.7
+08:49:10.613 [main] INFO - Pub rate 80183.3 msg/s / 78.3 MB/s | Cons rate 80033.8 msg/s / 78.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 380.5 - 50%: 336.8 - 99%: 1160.9 - 99.9%: 1209.2 - Max: 1324.8
+08:49:20.638 [main] INFO - Pub rate 26864.1 msg/s / 26.2 MB/s | Cons rate 26864.1 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1161.9 - 50%: 1172.6 - 99%: 1426.4 - 99.9%: 1574.3 - Max: 1574.7
+08:49:30.683 [main] INFO - Pub rate 26627.8 msg/s / 26.0 MB/s | Cons rate 26627.8 msg/s / 26.0 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1193.6 - 50%: 1166.5 - 99%: 1574.0 - 99.9%: 1609.2 - Max: 1743.9
+08:49:40.725 [main] INFO - Pub rate 27206.3 msg/s / 26.6 MB/s | Cons rate 27206.3 msg/s / 26.6 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1155.9 - 50%: 1172.3 - 99%: 1389.0 - 99.9%: 1390.5 - Max: 1563.5
+08:49:50.752 [main] INFO - Pub rate 26455.6 msg/s / 25.8 MB/s | Cons rate 26455.6 msg/s / 25.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1202.5 - 50%: 1208.9 - 99%: 1454.6 - 99.9%: 1471.9 - Max: 1706.9
+08:50:00.779 [main] INFO - Pub rate 28043.1 msg/s / 27.4 MB/s | Cons rate 28043.1 msg/s / 27.4 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1127.4 - 50%: 1123.2 - 99%: 1436.9 - 99.9%: 1437.4 - Max: 1498.0
+08:50:10.807 [main] INFO - Pub rate 39502.8 msg/s / 38.6 MB/s | Cons rate 39502.8 msg/s / 38.6 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 813.2 - 50%: 1001.2 - 99%: 1428.4 - 99.9%: 1679.5 - Max: 1679.7
+08:50:20.835 [main] INFO - Pub rate 29223.0 msg/s / 28.5 MB/s | Cons rate 29223.0 msg/s / 28.5 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1089.7 - 50%: 1073.8 - 99%: 1419.6 - 99.9%: 1420.3 - Max: 1449.4
+08:50:30.862 [main] INFO - Pub rate 27449.8 msg/s / 26.8 MB/s | Cons rate 27449.8 msg/s / 26.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1131.8 - 50%: 1141.3 - 99%: 1399.5 - 99.9%: 1431.1 - Max: 1520.8
+08:50:40.890 [main] INFO - Pub rate 29029.5 msg/s / 28.3 MB/s | Cons rate 29029.5 msg/s / 28.3 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1101.5 - 50%: 1087.1 - 99%: 1429.3 - 99.9%: 1429.8 - Max: 1488.3
+08:50:50.919 [main] INFO - Pub rate 27839.9 msg/s / 27.2 MB/s | Cons rate 27839.9 msg/s / 27.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1133.7 - 50%: 1111.5 - 99%: 1462.7 - 99.9%: 1463.5 - Max: 1594.2
+08:51:00.951 [main] INFO - Pub rate 27831.7 msg/s / 27.2 MB/s | Cons rate 27831.7 msg/s / 27.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1136.8 - 50%: 1130.9 - 99%: 1410.2 - 99.9%: 1415.1 - Max: 1530.0
+08:51:10.979 [main] INFO - Pub rate 26854.2 msg/s / 26.2 MB/s | Cons rate 26261.6 msg/s / 25.6 MB/s | Backlog:  5.9 K | Pub Latency (ms) avg: 1179.2 - 50%: 1180.1 - 99%: 1471.9 - 99.9%: 1472.5 - Max: 1477.0
+08:51:21.008 [main] INFO - Pub rate 26263.7 msg/s / 25.6 MB/s | Cons rate 26856.4 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1164.2 - 50%: 1164.8 - 99%: 1545.3 - 99.9%: 1546.4 - Max: 1546.6
+08:51:31.041 [main] INFO - Pub rate 27036.6 msg/s / 26.4 MB/s | Cons rate 27036.6 msg/s / 26.4 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1193.5 - 50%: 1179.1 - 99%: 1509.6 - 99.9%: 1518.0 - Max: 1618.9
+08:51:41.069 [main] INFO - Pub rate 26856.4 msg/s / 26.2 MB/s | Cons rate 26856.4 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1167.6 - 50%: 1141.2 - 99%: 1448.7 - 99.9%: 1473.2 - Max: 1674.7
+08:51:51.097 [main] INFO - Pub rate 27053.3 msg/s / 26.4 MB/s | Cons rate 27053.3 msg/s / 26.4 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1196.3 - 50%: 1196.0 - 99%: 1440.7 - 99.9%: 1441.5 - Max: 1647.7
+08:52:01.125 [main] INFO - Pub rate 26856.5 msg/s / 26.2 MB/s | Cons rate 26856.5 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1161.8 - 50%: 1158.5 - 99%: 1449.9 - 99.9%: 1537.8 - Max: 1637.2
+08:52:11.154 [main] INFO - Pub rate 38706.0 msg/s / 37.8 MB/s | Cons rate 38706.0 msg/s / 37.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 836.7 - 50%: 1003.6 - 99%: 1467.6 - 99.9%: 1538.2 - Max: 1630.0
+08:52:21.182 [main] INFO - Pub rate 26855.2 msg/s / 26.2 MB/s | Cons rate 26855.2 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1145.4 - 50%: 1127.1 - 99%: 1448.7 - 99.9%: 1536.5 - Max: 1616.6
+08:52:31.210 [main] INFO - Pub rate 26858.0 msg/s / 26.2 MB/s | Cons rate 26858.0 msg/s / 26.2 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1198.8 - 50%: 1179.8 - 99%: 1534.7 - 99.9%: 1569.7 - Max: 1594.9
+08:52:41.239 [main] INFO - Pub rate 27247.9 msg/s / 26.6 MB/s | Cons rate 27247.9 msg/s / 26.6 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1149.5 - 50%: 1137.0 - 99%: 1459.7 - 99.9%: 1490.5 - Max: 1585.4
+08:52:51.269 [main] INFO - Pub rate 29616.5 msg/s / 28.9 MB/s | Cons rate 29616.5 msg/s / 28.9 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1117.5 - 50%: 1145.5 - 99%: 1514.2 - 99.9%: 1670.2 - Max: 1721.3
+08:53:01.298 [main] INFO - Pub rate 35938.5 msg/s / 35.1 MB/s | Cons rate 35938.5 msg/s / 35.1 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 839.3 - 50%: 1054.1 - 99%: 1524.6 - 99.9%: 1525.2 - Max: 1622.4
+08:53:11.329 [main] INFO - Pub rate 26653.7 msg/s / 26.0 MB/s | Cons rate 26653.7 msg/s / 26.0 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1191.2 - 50%: 1183.2 - 99%: 1492.3 - 99.9%: 1667.7 - Max: 1668.1
+08:53:21.358 [main] INFO - Pub rate 27443.0 msg/s / 26.8 MB/s | Cons rate 27443.0 msg/s / 26.8 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1172.0 - 50%: 1157.3 - 99%: 1550.2 - 99.9%: 1569.3 - Max: 1626.7
+08:53:31.388 [main] INFO - Pub rate 26063.7 msg/s / 25.5 MB/s | Cons rate 26063.7 msg/s / 25.5 MB/s | Backlog:  0.0 K | Pub Latency (ms) avg: 1190.0 - 50%: 1181.8 - 99%: 1501.4 - 99.9%: 1501.8 - Max: 1672.7
+08:53:31.420 [main] INFO - ----- Aggregated Pub Latency (ms) avg: 902.8 - 50%: 1080.5 - 95%: 1365.5 - 99%: 1471.6 - 99.9%: 1573.9 - 99.99%: 1679.2 - Max: 1743.9
+08:53:31.565 [main] INFO - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+08:53:32.541 [main] INFO - Metrics scheduler closed
+08:53:32.541 [main] INFO - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+08:53:32.541 [main] INFO - Metrics reporters closed
+08:53:32.541 [main] INFO - App info kafka.producer for producer-1 unregistered
+08:53:32.641 [main] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Revoke previously assigned partitions test-topic-XFdg-Nw-0000-0
+08:53:32.641 [main] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Member consumer-sub-000-LM8jNnI-1-153b045f-e8ce-4b08-9e61-5efdcab1a746 sending LeaveGroup request to coordinator 127.0.0.1:33785 (id: 2147483647 rack: null) due to the consumer is being closed
+08:53:32.642 [main] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Resetting generation due to: consumer pro-actively leaving the group
+08:53:32.642 [main] INFO - [Consumer clientId=consumer-sub-000-LM8jNnI-1, groupId=sub-000-LM8jNnI] Request joining group due to: consumer pro-actively leaving the group
+08:53:32.646 [main] INFO - Metrics scheduler closed
+08:53:32.646 [main] INFO - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+08:53:32.646 [main] INFO - Metrics reporters closed
+08:53:32.647 [main] INFO - App info kafka.consumer for consumer-sub-000-LM8jNnI-1 unregistered
+08:53:32.647 [main] INFO - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+08:53:32.647 [main] INFO - Metrics scheduler closed
+08:53:32.647 [main] INFO - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+08:53:32.647 [main] INFO - Metrics reporters closed
+08:53:32.647 [main] INFO - App info kafka.producer for producer-1 unregistered
+08:53:32.648 [kafka-admin-client-thread | adminclient-1] INFO - App info kafka.admin.client for adminclient-1 unregistered
+08:53:32.649 [kafka-admin-client-thread | adminclient-1] INFO - Metrics scheduler closed
+08:53:32.649 [kafka-admin-client-thread | adminclient-1] INFO - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+08:53:32.649 [kafka-admin-client-thread | adminclient-1] INFO - Metrics reporters closed
+08:53:32.649 [main] INFO - Writing test result into max-rate-1-topic-1-partition-1p-1c-1kb-Kafka-2022-02-21-08-53-32.json
