@@ -7,3 +7,8 @@ https://docs.redpanda.com/docs/features/guide-rpk-container
 ```
 https://github.com/openmessaging/benchmark 
 ```
+
+### benchmark env
+```
+8 core cpu with 16GB memory
+```
